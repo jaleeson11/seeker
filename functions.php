@@ -139,7 +139,6 @@ add_action( 'widgets_init', 'seeker_widgets_init' );
  */
 function seeker_scripts() {
 	wp_enqueue_style( 'seeker-style', get_stylesheet_uri(), array(), SEEKER_VERSION );
-	wp_style_add_data( 'seeker-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'seeker-navigation', get_template_directory_uri() . '/js/navigation.js', array(), SEEKER_VERSION, true );
 
