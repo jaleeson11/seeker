@@ -17,16 +17,7 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				seeker_posted_on();
-				seeker_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		?>
 	</header><!-- .entry-header -->
 
 	<?php seeker_post_thumbnail(); ?>
@@ -58,6 +49,18 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php seeker_entry_footer(); ?>
+		<div class="entry-meta">
+			<?php seeker_entry_footer(); ?>
+		</div>
+
+		<?php
+		if ( 'post' === get_post_type() ) :
+			?>
+			<div class="entry-date">
+				<?php
+				seeker_posted_on();
+				?>
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
